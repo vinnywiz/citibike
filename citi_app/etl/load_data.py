@@ -2,19 +2,13 @@ import requests
 import zipfile
 import os
 from io import BytesIO
-import yaml
+from .config import read_yaml_config_file
 
 def download_and_extract_zip_file(output_folder, file_url='https://s3.amazonaws.com/tripdata/202001-citibike-tripdata.csv.zip'):
     r = requests.get(file_url, stream=True)
     z = zipfile.ZipFile(BytesIO(r.content))
     z.extractall(output_folder)
     return r.ok
-
-def read_yaml_config_file():
-    yaml_path = os.path.join('citi_app','etl', 'config.yaml')
-    with open(yaml_path) as f:
-        config = yaml.load(f, Loader=yaml.FullLoader)
-    return config
 
 def load_data(begin_year=2021, end_year=2021):
     # Get config variables

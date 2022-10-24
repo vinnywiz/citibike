@@ -1,1 +1,3 @@
 raw_data_path: 'raw_data'
+processed_data_path: 'processed_data'
+combined_file_name: 'citi_bike_raw.csv'

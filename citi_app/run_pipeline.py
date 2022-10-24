@@ -3,6 +3,6 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-def run_pipeline():
+def run_pipeline(load_raw=False):
     logger.info("Running ETL")
-    run_etl()
+    run_etl(load_raw=load_raw)
