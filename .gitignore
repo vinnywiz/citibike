@@ -133,4 +133,4 @@ logging.log
 
 # Ignore raw data
 raw_data/*
-processed_data/citi_bike_raw.csv
+processed_data/*
